@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Personal Dashboard</title>
+<style>
+    body {
+        font-family: 'Georgia', sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: powderblue;
+      }
+      
+      .account-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+      }
+      
+      .profile-card, .user-form {
+        background: rgb(225, 183, 167);
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1;
+        min-width: 300px;
+      }
+      .tdl{
+        background: rgb(226, 195, 138);
+        padding: 30px;
+        border-radius: 20px;
+        flex: 1;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1)
+        
+      }
+
+      .pokemon-info{
+        background: rgb(238, 238, 128);
+        padding: 20px;
+        border-radius: 10px;
+        min-width:300px;
+        float:left;
+      }
+
+      .username{
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        float: right;
+
+      }
+
+      h2{
+       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      .button1 {
+        background-color: powderblue;
+        font-family: Georgia;
+        color: black;
+        border:none;
+        display: inline-block;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+    
+
+      button:hover {
+      background-color: #5fbc78;
+      }
+
+    </style>
+    </head>
+
+    <body>
+        <div class="account-info">
+            <section class="profile-card" id="profile">
+            <h2>Your Profile</h2>
+            <p id="displayName" value="">Name </p>
+            <p id="displayEmail" value="">Email </p>
+            <p id="displayColor" value="">Favorite Color</p>
+
+            </section>
+            </section>
+          
+            <section class="user-form">
+            <h2>Enter your information:</h2>
+            <form id="userForm">
+                <label>Name: </label><input type="text" id="name" placeholder="Your Name" required><br>
+                <label>Email: </label><input type="email" id="email" placeholder="e.g. example@vcu.edu"  required><br>
+                <label>Favorite Color: </label><input type="text" id="color" placeholder="e.g. Green" required><br><br>
+                <button type="submit">Submit</button>
+
+            </form>
+        </section>
+        </div>
+<br>
+        <div class="listDiv">
+          <section class="tdl" id="tdl">
+          <h1>To-Do List</h1>
+          <input type="text" id="taskInput" placeholder="Enter task">
+          <button class="button1" onclick="addTask()"><strong>Add Task</strong></button>
+          <br>
+          <ul id="taskList"></ul>
+          <button class="button1" onclick="sortList()"><strong>Alphabetize</strong></button>
+          <button class="button1" onclick="filterNums()"><strong>Keep Numbers</strong></button>
+       </section>
+        </div>
+        <br>
+        <div>
+
+          <section class="pokemon-info" id="pokemonInfo">
+            <h1>My Favorite Pokemon</h1>
+            <button onclick="getURL()">Reveal!</button><br>
+
+            <img src="" id="eeveeSprite" style="display: block">
+
+          </section>
+
+          <section class="username" id="username">
+            <h1>Username Info</h1>
+            <ul id="userList"></ul>
+          </section>
+
+          <section class="save" id="save">
+            <form id="saveForm">
+              <input type="text" id="postSave" placeholder="Enter Title Here">
+              <textarea id="bodySave" placeholder="Write anything.">
+              </textarea>
+              <button type=""submit>Enter</button>
+            </form>
+          </section>
+
+          <div id="data">
+            
+          </div>
+
+        </div>
+        <script src="profileScript.js"></script>
+    </body>
+</html>
